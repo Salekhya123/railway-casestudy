@@ -1,0 +1,109 @@
+<!--   <nav class="navbar navbar-dark ">
+      <div class="navbar-brand">
+       
+        <b>Railway Reservation System</b>
+      </div>
+      <button type = "button" class ="btn btn-danger pull-right">LOGOUT</button>
+    </nav>
+    <div style="padding: 50px;" class="d-flex align-items-center justify-content-center">
+       <div class="shadow-lg p-3 mb-5 bg-dark rounded" id="box" style="opacity: 1;">   
+        <div class="container">
+          <div class="row justify-content-center">
+              <h2  class="font-weight-bold" style="color: white">Welcome Admin!!</h2>
+          </div>
+        </div> -->
+
+        <header class="navbar" style="color:darkcyan;">
+
+          <span class="example-spacer"></span>
+          <img mat-card-image src="/assets/image/home.svg">
+          <button mat-button style="color:white" routerLink='/search' routerLinkActive="active">Back</button>
+          
+        </header>
+
+<div class="container">
+ <div classs="card">
+  <h3 class="text-center" style="color: lightcyan;">LIST OF TRAINS</h3>
+    <div class="card-body">
+      <table class="table table-stripped" style="background-color: lightcyan ;">
+        <thead> 
+            <th>Train ID</th>
+            <th>Train Name</th>
+            <th>Source</th> 
+            <th>Destination</th> 
+            <th>Price</th>
+            <th>Action</th>
+        </thead>
+          <tbody>
+           <tr *ngFor = "let data of trains" style="color: #7272da;">                              
+                 <td>{{data.t_id}}</td>
+                 <td>{{data.t_name}}</td>
+                <td>{{data.source}}</td>
+                 <td>{{data.destination}}</td>
+                 <td>{{data.price}}</td>
+                 <td>
+      <button (click) = "onEditTrain(data)" type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#exampleModal">
+       Edit</button>
+      &nbsp;<button class="btn btn-danger" (click) = "deleteTrain(data)">Delete</button>
+      </td>
+       </tr>
+       </tbody>
+        </table>
+        <button (click) = "clickAddTrain()" type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#exampleModal">
+           Add Train </button>
+          </div>
+      </div>
+  
+  </div>
+
+  <!-- Modal - 1-->
+ <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+   <div class="modal-dialog">
+     <div class="modal-content">
+       <div class="modal-header">
+         <label class="form-label">TRAIN DETAILS</label>
+         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+       </div>
+       <div class="modal-body">
+           <form [formGroup]="formValue">
+               
+        <div class="mb-3">
+               <label class="form-label">Train ID</label>
+               <input type="text" formControlName="t_id" class="form-control"  id="exampleInputEmail">
+           </div>
+
+               <div class="mb-3">
+                   <label class="form-label">Train Name</label>
+                   <input type="text" formControlName="t_name" class="form-control"  id="exampleInputEmail">
+               </div>
+               <div class="mb-3">
+                   <label class="form-label">Source</label>
+                   <input type="text" formControlName="source" class="form-control" id="exampleInputEmail">
+               </div>
+               <div class="mb-3">
+                 <label class="form-label">Destination</label>
+                 <input type="text" formControlName="destination" class="form-control"  id="exampleInputEmail">
+             </div>
+
+             <div class="mb-3">
+              <label class="form-label">Price</label>
+              <input type="text" formControlName="price" class="form-control"  id="exampleInputEmail">
+          </div>
+           </form>
+       </div>
+       <div class="modal-footer">
+         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+         <button  type="button" (click)="updateTrain()" class="btn btn-primary">Update Train</button>
+         <button  type="button" (click)="addTrain()" class="btn btn-primary">Add Train</button>
+       </div>
+     </div>
+   </div> 
+    
+
+
+
+
+
+
+  <!-- Modal - 2-->
+  

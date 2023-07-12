@@ -1,0 +1,55 @@
+<header class="navbar" style="color:darkcyan;">
+    <mat-toolbar color="primary">
+    <span class="example-spacer"></span>
+    <img mat-card-image src="/assets/image/home.svg">
+    <button mat-button style="color:white" routerLink='' routerLinkActive="active">Home</button>
+    </mat-toolbar>
+</header>
+
+
+
+
+<div style="padding: 50px;" class="d-flex align-items-center justify-content-center">
+    <div class="shadow-lg p-3 mb-5 bg-white" id="box" style="opacity: 1;">  
+     <div class="container">
+       <div class="row justify-content-center">
+           <h2  class="font-weight-bold" style="color: rgb(20, 20, 20);">Trains List</h2>
+       </div>
+
+  <div class="search-container">
+      <input type="text" name="search" placeholder="Search.." class="Search-input" [(ngModel)]="searchText">
+<a href="#" class="search-btn">
+<span class="material-icons">search</span>
+</a>
+  </div>     
+
+<div class="container">
+    <div classs="card">
+        <h3 class="text-center">  </h3>
+        <div class="card-body">
+            <table class="table table-stripped">
+                <thead>
+                   <th>TrainId</th>
+                   <th>TrainName</th>
+                   <th>Source</th>
+                   <th>Destination</th>
+                   <th>Price</th> 
+                   <th>Action</th> 
+                </thead>
+                <tbody>
+                    <tr *ngFor = "let train of trains | filter:searchText" >
+                        <td>{{train.t_id}}</td>
+                        <td>{{train.t_name}}</td>
+                        <td>{{train.source}}</td>
+                        <td>{{train.destination}}</td>
+                        <td>{{train.price}}</td>
+                        <td>
+                            <button (click)="selectRow(train)" *ngIf="isLoggedIn" routerLink="/formbook" type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                Book</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

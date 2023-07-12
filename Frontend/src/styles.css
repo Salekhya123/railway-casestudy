@@ -1,0 +1,37 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body{
+    background-image: url('./assets/image/train12.jpg');
+    background-size: cover;
+}
+
+div.first{
+    text-align: center;   
+    float:center; 
+}
+
+div.second{
+    text-align:left;
+    float:left;
+}
+h1{
+  text-shadow: 2px;
+  text-decoration: blue;
+   margin:0%;
+}
+h2{
+    margin:0%;
+}
+a{
+    color:rgb(141, 10, 10);
+    text-align: center;
+}
+div.examplelabel{
+    text-align:center;
+}
+   
+  div.class{
+      text-align: center;
+  }

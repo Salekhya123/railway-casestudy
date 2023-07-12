@@ -1,0 +1,52 @@
+.login-page {
+    top: 0;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    height: 500 px;
+    color: #fff;
+    background-image: url("../../assets/image/train.jpg");
+    /* background-color: #303F9F;*/
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+}
+
+mat-card {
+    width: 30%;
+    margin: 9% auto;
+    border-color: rgba(0, 255, 255, 0.349);
+    border-style: solid;
+    border-radius: 8px;
+    font-style: normal;
+    font-family: fantasy;
+    color: darkcyan;
+}
+
+mat-form-field,
+mat-checkbox {
+    width: 80%;
+    display: block;
+    margin: auto;
+}
+
+mat-card-content {
+    margin-top: 20px;
+}
+
+.login-button {
+    margin-top: 20px;
+    display: block;
+    width: 80%;
+    margin: 20px auto;
+}
+
+button {
+    background-color: rgb(87, 66, 203);
+}
+.example-spacer {
+    flex: 1 1 auto;
+  }

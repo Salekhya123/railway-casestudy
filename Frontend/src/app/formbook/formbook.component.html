@@ -1,0 +1,85 @@
+<header class="navbar" style="color:darkcyan;">
+
+  <span class="example-spacer"></span>
+
+  <img mat-card-image src="/assets/image/home.svg">
+  <button mat-button style="color:white" routerLink='' routerLinkActive="active">Home</button>
+
+  <img mat-card-image src="/assets/image/person.svg">
+  <button mat-button style="color:white" href="#" (click)="onLogout($event)" routerLinkActive="active">
+    Logout</button>
+
+</header>
+
+
+
+
+
+<div style="padding: 50px;" class="d-flex align-items-center justify-content-center">
+  <div class="shadow-lg p-3 mb-5 bg-lightgreen" id="box" style="opacity: 1;">
+    <div class="container">
+      <div class="row justify-content-center">
+        <h2 class="font-weight-bold" style="color: rgb(20, 20, 20);"></h2>
+
+        <form [formGroup]="formValue" #userForm="ngForm">
+          <!-- <div class="mb-3">
+    <label class="form-label" >PNR</label>
+    <input type="text" formControlName="PNR" class="form-control" placeholder="Add PNR here" id="exampleInputEmail1" required ngModel>
+  </div> -->
+          <div class="mb-3">
+            <label class="form-label">Train Id</label>
+            <input type="text" formControlName="ticket_id" class="form-control" placeholder="Add Ticket Id here"
+              id="exampleInputEmail1" required [(ngModel)]="selectedRowData.t_id">
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">No Of Seats</label>
+            <input type="text" formControlName="no_of_seats" class="form-control" placeholder="No Of Seats"
+              id="exampleInputEmail1" required ngModel>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Source</label>
+            <input type="text" formControlName="source" class="form-control" placeholder="source"
+              id="exampleInputEmail1" required [(ngModel)]="selectedRowData.source">
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Destination</label>
+            <input type="text" formControlName="destination" class="form-control" placeholder="destination"
+              id="exampleInputEmail1" required [(ngModel)]="selectedRowData.destination">
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Price</label>
+            <input type="text" formControlName="price" class="form-control" placeholder="price" id="exampleInputEmail1"
+               required [(ngModel)]="selectedRowData.price ">
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Date</label>
+            <input type="date" formControlName="date" class="form-control" placeholder="date" id="exampleInputEmail1"
+              required [(ngModel)]="selectedRowData.t_id">
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Time</label>
+            <input type="time" formControlName="time" class="form-control" placeholder="time" id="exampleInputEmail1"
+              required [(ngModel)]="selectedRowData.t_id">
+          </div>
+
+
+
+        </form>
+
+        <!--button to submit-->
+        <div class="wrapperbtn">
+          <button type="button" class="btn btn-primary" (click)="addBooking()"
+            [disabled]="!formValue.valid">BOOK</button>
+          &nbsp;<button type="button" class="btn btn-primary" *ngIf="isLoggedIn" routerLink="/book">See Booked Detils</button>
+          &nbsp;<a><button (click)="makePayment(15)" type="button" class="btn btn-primary">PAY</button></a>
+        </div>
+
+      </div>
+
+      <!--href="http://localhost:8083/"-->

@@ -1,0 +1,50 @@
+<header class="navbar" style="color:darkcyan;">{{response}}
+
+    <span class="example-spacer"></span>
+    <img mat-card-image src="/assets/image/home.svg">
+    <button mat-button style="color:white" routerLink='' routerLinkActive="active">Home</button>
+    
+</header>
+
+
+<div class="login-page">
+
+    <mat-card class="mat-elevation-z12">
+        <mat-card-title style="text-align:center;">
+            <mat-icon>login</mat-icon>SignIn</mat-card-title>
+        <mat-tab-group mat-stretch-tabs class="example-stretched-tabs">
+            <mat-tab label="Sign In">
+                <mat-card-content>
+
+                    <form (ngSubmit)="onSubmit()">
+                        <mat-form-field>
+                            <input matInput placeholder="User Name" required pattern="[a-zA-Z][a-zA-Z ]+" name="user"
+                                [(ngModel)]="authenticationRequest.username">
+
+                            <mat-icon matSuffix>supervised_user_circle</mat-icon>
+                        </mat-form-field>
+                        <mat-form-field>
+                            <input matInput [type]="showPassword ? 'text' : 'password'" name="password"
+                                placeholder="Password" type="password" required minlength="6" name="password"
+                                [(ngModel)]="authenticationRequest.password">
+
+                            <mat-icon matSuffix (click)="togglePasswordVisibility()">
+                                {{showPassword?'visibility':'visibility_off'}}
+                            </mat-icon>
+                        </mat-form-field>
+                        <mat-checkbox>Remember Me!</mat-checkbox>
+                        <button mat-raised-button class="login-button">
+                            Sign In
+                        </button>
+
+                        <button mat-raised-button class="login-button">
+                            Login with Google
+                        </button>
+                        <a routerLink="/register" style="float: right;color:blueviolet;">New User?Click on SighnUp</a>
+                    </form>
+                </mat-card-content>
+            </mat-tab>
+
+        </mat-tab-group>
+    </mat-card>
+</div>

@@ -1,0 +1,83 @@
+<h1 style="color:darkcyan;">
+    {{response}}</h1>
+<div class="login-page">
+
+    <mat-card class="mat-elevation-z12">
+        <mat-card-title style="text-align:center;">
+            <mat-icon>login</mat-icon>SignUp</mat-card-title>
+        <mat-tab-group mat-stretch-tabs class="example-stretched-tabs">
+
+            <mat-card-content>
+
+                <mat-tab label="Sign Up">
+                    <mat-card-content>
+                        <form (ngSubmit)="OnRegister()">
+                            <mat-form-field>
+                                <input matInput placeholder="User Name" required pattern="[a-zA-Z]{3,}" id="username" #username="ngModel" name="user" [class.is-invalid]="username.invalid" [(ngModel)]="authenticationRequest.username">
+
+                                <mat-icon matSuffix>supervised_user_circle</mat-icon>
+
+                                
+                                <mat-error *ngIf="username.errors?.['required']"> username is required </mat-error>
+                                <mat-error *ngIf="username.errors?.['pattern']"> Enter min 3,only alphabets name  </mat-error>
+
+
+
+                            </mat-form-field>
+
+                            <mat-form-field>
+                                <input matInput placeholder="Email" required pattern="/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/" #email="ngModel" [class.is-invalid]="email.invalid" name="email" [(ngModel)]="authenticationRequest.email">
+                                <!-- <mat-error *ngIf="email.invalid">Email is required</mat-error> -->
+                                <mat-icon matSuffix>email</mat-icon>
+                                <mat-error *ngIf="email.errors?.['required']"> email is required </mat-error>
+                                <mat-error *ngIf="email.errors?.['pattern']"> enter a valid email  </mat-error>
+
+                            </mat-form-field>
+                            <mat-form-field>
+                                <input matInput [type]="showPassword ? 'text' : 'password'"  #password="ngModel" name="password" placeholder="Password" type="password" required minlength="6" name="password" [(ngModel)]="authenticationRequest.password">
+                                <mat-error *ngIf="password.errors?.['required']"> password is required </mat-error>
+                                <!-- <mat-error *ngIf="password.errors && password.errors?.['required']" id="togglePassword">
+                    Password is required
+                </mat-error>
+                <mat-error *ngIf="password.errors && password.errors?.['minlength']">
+                    Password must be of length 6
+                </mat-error> -->
+
+                                <mat-icon matSuffix (click)="togglePasswordVisibility()">
+                                    {{showPassword?'visibility':'visibility_off'}}
+                                </mat-icon>
+                            </mat-form-field>
+                            <mat-form-field>
+                                <input matInput [type]="showPassword ? 'text' : 'password'" name="password" placeholder="confirm Password" type="password" required minlength="6" name="repassword" [(ngModel)]="authenticationRequest.password">
+                                
+                                <!-- <mat-error *ngIf="repassword.errors && repassword.errors?.['required']">
+                    Re-Enter Password is required
+                </mat-error> 
+            
+            [(ngModel)]="authenticationRequest.password"
+            <mat-icon matSuffix>visibility_off</mat-icon>
+            -->
+                                
+                                <mat-icon matSuffix (click)="togglePasswordVisibility()">
+                                    {{showPassword?'visibility':'visibility_off'}}
+                                </mat-icon>
+                            </mat-form-field>
+                            <button mat-raised-button color="primary" class="login-button" >
+    Sign Up
+  </button>
+                        </form>
+
+                    </mat-card-content>
+                </mat-tab>
+
+
+
+
+
+
+
+
+
+
+
+                

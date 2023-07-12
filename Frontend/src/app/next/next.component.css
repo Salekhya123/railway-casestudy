@@ -1,0 +1,22 @@
+search-container{
+    border-radius: 2rem;
+}
+.example-spacer {
+    flex: 1 1 auto;
+  }
+
+.text{
+  margin-left: 450px;
+  margin-top: 200px;
+  position:absolute;
+  text-align: center;
+  color: burlywood;
+  text-decoration: solid;
+  font-size: large;
+  font-weight: 1500;
+  font-family:  'Courier New', Courier, monospace;
+  font-style: italic ;
+  display: flex;
+
+
+}

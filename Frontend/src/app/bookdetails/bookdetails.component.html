@@ -1,0 +1,93 @@
+<header class="navbar" style="color:darkcyan;">
+
+  <span class="example-spacer"></span>
+  <img mat-card-image src="/assets/image/home.svg">
+  <button mat-button style="color:white" routerLink='/search' routerLinkActive="active">Back</button>
+  
+</header>
+
+<div class="container">
+    <div classs="card">
+     <h3 class="text-center" style="color: lightcyan;"></h3>
+       <div class="card-body">
+         <table class="table table-stripped" style="background-color: lightcyan ;">
+           <thead> 
+               <th>PNR</th>
+               <th>Ticket Id</th>
+               <th>NO Of Seats</th>
+               <th>Source</th> 
+               <th>Destination</th> 
+               <th>Price</th>
+               <th>Date</th>
+               <th>Time</th>
+           </thead>
+             <tbody>
+              <tr *ngFor = "let data of books" style="color: #7272da;">                              
+                    <td>{{data.pnr}}</td>
+                    <td>{{data.ticket_id}}</td>
+                    <td>{{data.no_of_seats}}</td>
+                    <td>{{data.source}}</td>
+                    <td>{{data.destination}}</td>
+                    <td>{{data.price}}</td>
+                    <td>{{data.date}}</td>
+                    <td>{{data.time}}</td>
+                  
+          </tr>
+          </tbody>
+           </table>
+             </div>
+         </div>
+     
+     </div>
+   
+     <!-- Modal - 1-->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <label class="form-label">BOOKING DETAILS</label>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              <form [formGroup]="formValue">
+
+          <div class="mb-3">
+                  <label class="form-label">PNR</label>
+                  <input type="text" formControlName="pnr" class="form-control"  id="exampleInputEmail">
+              </div> 
+   
+                  <div class="mb-3">
+                      <label class="form-label">Ticket Id</label>
+                      <input type="text" formControlName="ticket_id" class="form-control"  id="exampleInputEmail">
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label">No Of Seats</label>
+                    <input type="text" formControlName="no_of_seats" class="form-control"  id="exampleInputEmail">
+                </div>
+                  <div class="mb-3">
+                      <label class="form-label">Source</label>
+                      <input type="text" formControlName="source" class="form-control" id="exampleInputEmail">
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label">Destination</label>
+                    <input type="text" formControlName="destination" class="form-control"  id="exampleInputEmail">
+                </div>
+
+                <div class="mb-3">
+                  <label class="form-label">Price</label>
+                  <input type="text" formControlName="price" class="form-control"  id="exampleInputEmail">
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Date</label>
+                <input type="date" formControlName="date" class="form-control"  id="exampleInputEmail">
+            </div>
+                <div class="mb-3">
+                    <label class="form-label">Time</label>
+                    <input type="time" formControlName="time" class="form-control"  id="exampleInputEmail">
+                </div>
+              </form>
+          </div>
+         
+        </div>
+      </div> 
+

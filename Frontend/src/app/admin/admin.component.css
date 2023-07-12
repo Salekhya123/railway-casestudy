@@ -1,0 +1,10 @@
+#box{
+    width: 50%;
+    height: 50%;
+  }
+  #opacity-3 {
+  opacity:0.6!important;
+}
+.example-spacer {
+  flex: 1 1 auto;
+}
